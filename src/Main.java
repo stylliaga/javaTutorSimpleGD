@@ -9,6 +9,11 @@ public class Main {
         int nt = 999999999;
         System.out.println("Int - " + nt);
 
+        // lng это -2в63
+        // при этом в 32 битной системе длина равно int
+        // а в 64 битной принимает уже 64
+        long lng = 1000000001;
+        System.out.println("Long - " + lng);
         
     }
 }
