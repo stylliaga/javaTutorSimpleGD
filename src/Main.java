@@ -6,7 +6,7 @@ import javax.script.ScriptException;
 
 public class Main {
     public static void main(String[] args){
-        // If - условные операторы
+        // SWITCH CASE - условные операторы
         // легкий консольный калькулатор без проверок с
         // простыми числами
 
@@ -34,31 +34,35 @@ public class Main {
         // ловим что он выбрал и проверяем
         // в соответствии с тем что он выбрал выводим в консоль
         mathOperation = scnr.nextInt();
-        // если ввел 1, то операция сложения
-        if(mathOperation == 1){
-            symbOfOperation = "+";
-            str = "Вы выбрали операцию сложения чисел.";
-        // если ввел 2, то операция вычитания
-        } else if(mathOperation == 2){
-            symbOfOperation = "-";
-            str = "Вы выбрали операцию вычитания чисел.";
-        // если ввел 3, то операция умножения
-        } else if(mathOperation == 3){
-            symbOfOperation = "*";
-            str = "Вы выбрали операцию умножения чисел.";
-        // если ввел 4, то операция деления
-        } else if(mathOperation == 4){
-            symbOfOperation = "/";
-            str = "Вы выбрали операцию деления чисел.";
-        // если ничего не ввел или ввел левое число
-        }else {
-            symbOfOperation = "";
-            str = "Вы не выбрали вид мат. операции!";
+        switch(mathOperation){
 
-            System.out.println(""+str+"");
-            // останавливаем выполнение программы
-            System.exit(0);
+            // если ввел 1, то операция сложения
+            case 1:
+                symbOfOperation = "+";
+                str = "Вы выбрали операцию сложения чисел.";
+                break;
+            case 2:
+                // если ввел 2, то операция вычитания
+                symbOfOperation = "-";
+                str = "Вы выбрали операцию вычитания чисел.";
+                break;
+            case 3:
+                // если ввел 3, то операция умножения
+                symbOfOperation = "*";
+                str = "Вы выбрали операцию умножения чисел.";
+                break;
+            case 4:
+                // если ввел 4, то операция деления
+                symbOfOperation = "/";
+                str = "Вы выбрали операцию деления чисел.";
+                break;
+            default:
+                // если ничего не ввел или ввел левое число
+                symbOfOperation = "";
+                str = "Вы не выбрали вид мат. операции!";
+                break;
         }
+
         // выводим в консоль уведомление о выбранно мат. операции
         System.out.println(""+str+"");
         // ловим первое число
