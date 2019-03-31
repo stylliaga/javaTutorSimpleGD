@@ -1,35 +1,31 @@
 import java.lang.String;
-import  java.util.Scanner;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        // FOR - циклы
-        // DO.WHILE
-        // уменьшение на 1
-       /* for(int i = 100; i > 10; i--){
-            System.out.println(i);
-        }
-       // уменьшение на 10
-        for (int i = 100; i >= 10; i -=10){
-            System.out.println(i);
-        }
-        // увеличение на 20
-        for(int i = 0; i  <=  100; i += 20 ){
-            System.out.println(i);
-        }*/
-       // DO-WHILE  - циклы
-        boolean bol = true;
-        int nt      = 5;
-        do{
-            System.out.println(nt);
-            nt ++;
-            if(nt >= 15){
-                bol = false;
-            }
+        // МАССИВЫ одномерные - юзер указывает размерность массива
+        // затем вводит числа, которые помещаем в массив
+        // затем выводим весь массив
 
-        }while(bol == true);
+        // обьявляем массив и переменную, все простые числа
+        int[] a;
+        int n;
+
+        // создаем сканер и просим чтобы юзер ввел размерность массива
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Пожалуйста, введите желаемое количество ячеек в массиве: ");
+        n = sc.nextInt();
+        a = new int[n];
+        // в цикле записываем в массив значения, которые вводит юзер
+        for(int i = 0; i < n; i++){
+            System.out.println("Введите число, которое помести в ячейкц массива a["+i+"}:");
+            a[i] = sc.nextInt();
+        }
+
+        // выводим полученный массив
+        System.out.println("В массиве \"а\" из "+ a.length +" ячеек содержатся следующие числа:");
+        for(int i = 0; i < a.length;i++){
+            System.out.print(a[i]+ " ");
+       }
     }
 }
