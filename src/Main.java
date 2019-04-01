@@ -2,51 +2,66 @@ import java.lang.String;
 import java.util.Scanner;
 
 public class Main {
+    // Функции
+    // напишем простые функции сложения,вычитания,умножения,деленния, возведения в степень
     public static void main(String[] args) {
-        // МАССИВЫ многомерные - юзер указывает размерность массива
-        // потом вводит строки в каждую ячейку согласно его размерности
-
-        // сначала попробуем сделать строковый квадратный многомерный массив
+        // считываем то что ввел юзер
         Scanner scnr = new Scanner(System.in);
+        System.out.println("Пожалуйста, введите ЦЕЛЫЕ числа для расчетов.\n" +
+                            " Введите первое число:");
+        int digitA = scnr.nextInt();
+        System.out.println("Введите второе число:");
+        int digitB = scnr.nextInt();
 
-        //собираем данные - сколько ячеек будет в массиве
-        System.out.println("Введите количество ячеек в массиве:");
+        System.out.println("########## Результаты расчетов ##########");
 
-        //первый эл-т строкового массива
-        int elemStrArr1 = scnr.nextInt();
+        int outFunc = fncSum(digitA,digitB);
+        System.out.println(outFunc);
 
+        outFunc = fncSubtr(digitA,digitB);
+        System.out.println(outFunc);
 
-        //собираем данные - сколько ячеек будет в массиве
-        System.out.println("Введите количество подъячеек в массиве:");
+         outFunc = fncMult(digitA,digitB);
+        System.out.println(outFunc);
 
-        //первый эл-т строкового массива
-        int elemStrArr2 = scnr.nextInt();
+         outFunc = fncDivsn(digitA,digitB);
+        System.out.println(outFunc);
 
-        String[][] arrMass = new String[elemStrArr1][elemStrArr2];
-        int f = arrMass.length;
-        // добавляем считывание строки, оптому что программа считывает символ \n после нажатия ЕНТЕР как новую строку
-        scnr.nextLine();
-        for(int i = 0; i < arrMass.length; i++){
-            System.out.println("Введите значение для ячейки массива:" + f );
-            for(int j = 0; j < arrMass[i].length; j++){
-                String strng = new String();
-               // scnr.nextLine();
-                System.out.println("Подъячейка№:" + j );
-                strng = scnr.nextLine();
-                arrMass[i][j] = strng;
-            }
-            f = f-1;
-        }
-        // выводим все
-        System.out.println("#################################");
+         outFunc = fncExponent(digitA,digitB);
+        System.out.println(outFunc);
 
-        for(int i = 0; i < arrMass.length; i++){
-            System.out.println("arrMass["+i+"]");
-            for(int j = 0; j < arrMass[i].length; j++){
-                System.out.print(""+arrMass[i][j]+" ");
-            }
-            System.out.println("");
+    }
+    // сложения
+    public static int fncSum(int a, int b){
+        int result;
+        result = a + b;
+        return result;
+    }
+    // вычитания
+    public static int fncSubtr(int a, int b){
+        int result;
+        result = a - b;
+        return result;
+    }
+    // умножения
+    public static int fncMult(int a, int b){
+        int result;
+        result = a * b;
+        return result;
+    }
+    // деления
+    public static int fncDivsn(int a, int b){
+        int result;
+        result = a / b;
+        return result;
+    }
+    // возведение в степень
+    public static int fncExponent(int a, int b){
+        int result = 1;
+        for(int i = 0; i < b; i++)
+            result *=a;
 
-        }
+        return result;
     }
 }
+
