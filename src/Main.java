@@ -10,6 +10,7 @@ public class Main {
         // Просим чтобы юзер ввел цифры в соответствии с математической операцией
         greetings();
     }
+    // функция запускающая главный процесс
     public static void greetings (){
         System.out.println("Выберите один из пунктов с желаемой математической операцией:\n" +
                 "1. Сложение\n" +
@@ -34,11 +35,11 @@ public class Main {
 
         System.out.println("Введите второе число:");
         int digitB = scnr.nextInt();
-        // если ввел что то непонятно е- останавливаем программу
+        // если ввел что то непонятно перезапускаем программу
         stopProgram(digitB);
 
         System.out.println("########## Результаты расчетов ##########");
-        int outMathOps = mathOps(digitA,digitB,typeOfOps);
+        String outMathOps = mathOps(digitA,digitB,typeOfOps);
 
         System.out.println(outMathOps);
         return;
@@ -46,6 +47,7 @@ public class Main {
     public static void stopProgramChoose(int a){
         if(a > 6){
             System.out.println("Вы ввели не правильное число для операции.");
+            // запускаем программу заново
             greetings();
             //System.exit(0);
         }
@@ -58,26 +60,32 @@ public class Main {
             //System.exit(0);
         //}
     }
-    public static int mathOps(int z,int x,int v){
-        int rtrn = 0;
+    public static String mathOps(int z,int x,int v){
+        String rtrn = new String();
         switch (v){
             case 1:
-                rtrn = fncSum(z, x);
+                System.out.println("Вы выбрали операцию сложения.");
+                rtrn = String.valueOf(fncSum(z, x));
                 break;
             case 2:
-                rtrn = fncDiff(z, x);
+                System.out.println("Вы выбрали операцию вычитания.");
+                rtrn = String.valueOf(fncDiff(z, x));
                 break;
             case 3:
-                rtrn = fncMult(z, x);
+                System.out.println("Вы выбрали операцию умножения.");
+                rtrn = String.valueOf(fncMult(z, x));
                 break;
             case 4:
-                rtrn = fncDivsn(z, x);
+                System.out.println("Вы выбрали операцию деления.");
+                rtrn = String.valueOf(fncDivsn(z, x));
                 break;
             case 5:
-                rtrn = fncExponent(z, x);
+                System.out.println("Вы выбрали операцию возведения в степень.");
+                rtrn = String.valueOf(fncExponent(z, x));
                 break;
             case 6:
-                fncRoot(z,x);
+                System.out.println("Вы выбрали операцию нахождения корня.");
+                rtrn = String.valueOf(fncRoot(z, x));
                 break;
             default:
                 String wTpOp = new String();
@@ -127,11 +135,11 @@ public class Main {
         return result;
     }
     // вычисление корня
-    public String fncRoot(String a, String b){
+    public static String fncRoot(int a, int b){
         //Math.pow(a, 1.0 / b) = Math.exp(Math.log(a)/b);
         double resultDouble = Math.exp(Math.log(a)/b);
         String result = String.valueOf(resultDouble);
-        System.out.println(result);
+        return result;
     }
 }
 
