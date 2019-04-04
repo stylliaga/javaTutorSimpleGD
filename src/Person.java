@@ -8,5 +8,18 @@ public class Person {
         System.out.println(" - "+saySomeThing+". - "+kindOfSaing+" "+personName+".");
     }
 
+    public Person(){}
 
+    String persName;
+    String persPhrase;
+    String persTypeOfPhrase;
+    int persHeight;
+    int persWeight;
+    public Person(String name, String phrase, String typeOfPhrase, int height, int weight){
+        persName            = name;
+        persPhrase          = phrase;
+        persTypeOfPhrase    = typeOfPhrase;
+        persHeight          = height;
+        persWeight          = weight;
+    }
 }
