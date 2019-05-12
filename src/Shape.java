@@ -1,3 +1,3 @@
-public class Shape {
-    public void draw (){}
+public abstract class Shape {
+    abstract public void draw();
 }
